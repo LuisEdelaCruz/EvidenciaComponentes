@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Talleres Disponibles</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="/">Talleres Creativos</a>
+    <div><a href="/talleres">Talleres</a></div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <h1>Talleres Disponibles</h1>
+      <p>Selecciona un taller para inscribirte.</p>
+
+      <!-- Recorre el arreglo de talleres recibido desde el controller -->
+      <div class="tarjetas">
+        <% talleres.forEach(t => { %>
+          <div class="tarjeta">
+            <h3><%= t.nombre %></h3>
+            <p class="precio">$<%= t.precio %> MXN</p>
+
+            <!-- Muestra "Sin cupo" en rojo si el cupo llegó a 0 -->
+            <p class="cupo <%= t.cupo === 0 ? 'agotado' : '' %>">
+              <% if (t.cupo === 0) { %> Sin cupo <% } else { %> Cupo: <%= t.cupo %> <% } %>
+            </p>
+
+            <a class="btn" href="/talleres/<%= t.id %>">Ver detalle</a>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

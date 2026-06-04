@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inscripción confirmada</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    /* Tarjeta de confirmación centrada */
+    .confirmacion { max-width: 420px; margin: 0 auto; text-align: center; }
+    .datos { background: #f0f6ff; border-radius: 8px; padding: 1.25rem; margin: 1.25rem 0; text-align: left; }
+    .dato  { display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px solid #dce8f5; font-size: 0.95rem; }
+    .dato:last-child { border-bottom: none; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="/">Talleres Creativos</a>
+    <div><a href="/talleres">Talleres</a></div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="confirmacion">
+
+        <h1>✅ ¡Inscripción exitosa!</h1>
+        <p>Tu lugar ha sido reservado correctamente.</p>
+
+        <!-- Resumen de los datos de la inscripción -->
+        <div class="datos">
+          <div class="dato"><span>Taller</span>  <strong><%= taller.nombre %></strong></div>
+          <div class="dato"><span>Nombre</span>  <strong><%= inscripcion.nombre %></strong></div>
+          <div class="dato"><span>Correo</span>  <strong><%= inscripcion.email %></strong></div>
+          <div class="dato"><span>Fecha</span>   <strong><%= inscripcion.fecha %></strong></div>
+          <div class="dato"><span>Costo</span>   <strong>$<%= taller.precio %> MXN</strong></div>
+        </div>
+
+        <a class="btn" href="/talleres">Ver más talleres</a>
+
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

@@ -1,19 +1,24 @@
 const express = require('express');
-const path = require('path');
-const serviciosRouter = require('./routes/servicios.routes');
+const path    = require('path');
 
-const app = express();
+const app  = express();
 const PORT = 4242;
 
+// Motor de plantillas: Express buscará archivos .ejs dentro de /views
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use(express.json());
+// Permite leer datos enviados desde formularios HTML (method="POST")
+app.use(express.urlencoded({ extended: false }));
+
+// Sirve archivos estáticos (CSS, imágenes) desde la carpeta /public
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/servicios', serviciosRouter);
+// Rutas del módulo de talleres
+app.use('/talleres', require('./routes/talleres.routes'));
 
-app.get('/', (req, res) => res.redirect('/servicios'));
+// Ruta raíz: muestra la página de inicio
+app.get('/', (req, res) => res.render('home'));
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);

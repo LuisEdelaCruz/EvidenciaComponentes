@@ -1,16 +1,46 @@
-const servicios = [
-  { id: 1, nombre: "Cabaña El Pino", tipo: "alojamiento", precio: 500 },
-  { id: 2, nombre: "Guía Sierra Norte", tipo: "guia", precio: 300 },
-  { id: 3, nombre: "Artesanías Ramírez", tipo: "artesano", precio: 150 },
-  { id: 4, nombre: "Restaurante La Milpa", tipo: "restaurante", precio: 200 },
+// Datos en memoria: simula una base de datos mientras no haya BD real
+const talleres = [
+  { id: 1, nombre: 'Cerámica',  precio: 500,  cupo: 10 },
+  { id: 2, nombre: 'Pintura',   precio: 300,  cupo: 15 },
+  { id: 3, nombre: 'Escultura', precio: 650,  cupo: 8  },
+  { id: 4, nombre: 'Textiles',  precio: 500,  cupo: 12 },
+  { id: 5, nombre: 'Joyería',   precio: 1000, cupo: 6  },
 ];
 
-function getTodos() {
-  return servicios;
+const inscripciones = [];
+
+// Devuelve todos los talleres
+function getTalleres() {
+  return talleres;
 }
 
-function getPorId(id) {
-  return servicios.find(s => s.id === parseInt(id));
+// Busca un taller por su ID
+function getTallerPorId(id) {
+  return talleres.find(t => t.id === parseInt(id));
 }
 
-module.exports = { getTodos, getPorId };
+// Verifica si un correo ya está inscrito en un taller específico
+function yaInscrito(email, tallerId) {
+  return inscripciones.some(i => i.email === email && i.tallerId === parseInt(tallerId));
+}
+
+// Guarda la inscripción y reduce el cupo del taller
+function inscribir(datos) {
+  const taller = getTallerPorId(datos.tallerId);
+  taller.cupo -= 1;
+
+  const nueva = {
+    id: inscripciones.length + 1,
+    ...datos,
+    fecha: new Date().toLocaleDateString('es-MX'),
+  };
+  inscripciones.push(nueva);
+  return nueva;
+}
+
+// Devuelve todas las inscripciones de un taller
+function getInscripcionesPorTaller(tallerId) {
+  return inscripciones.filter(i => i.tallerId === parseInt(tallerId));
+}
+
+module.exports = { getTalleres, getTallerPorId, yaInscrito, inscribir, getInscripcionesPorTaller };

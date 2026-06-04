@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inscritos — <%= taller.nombre %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="/">Talleres Creativos</a>
+    <div><a href="/talleres">Talleres</a></div>
+  </nav>
+
+  <main>
+    <div class="container">
+
+      <a class="volver" href="/talleres/<%= taller.id %>">← Volver al taller</a>
+
+      <h1>Inscritos: <%= taller.nombre %></h1>
+      <p>Total inscritos: <strong><%= lista.length %></strong> — Cupo restante: <strong><%= taller.cupo %></strong></p>
+
+      <!-- Si no hay inscritos muestra un mensaje, si hay muestra la tabla -->
+      <% if (lista.length === 0) { %>
+        <p style="color:#888; font-style:italic;">Aún no hay inscripciones para este taller.</p>
+      <% } else { %>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Recorre la lista de inscritos recibida desde el controller -->
+            <% lista.forEach(i => { %>
+              <tr>
+                <td><%= i.id %></td>
+                <td><%= i.nombre %></td>
+                <td><%= i.email %></td>
+                <td><%= i.fecha %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      <% } %>
+
+    </div>
+  </main>
+
+</body>
+</html>
