@@ -1,0 +1,24 @@
+{
+  "name": "competencia",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/LuisEdelaCruz/Competencia#readme",
+  "bugs": {
+    "url": "https://github.com/LuisEdelaCruz/Competencia/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisEdelaCruz/Competencia.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.22.2"
+  }
+}
