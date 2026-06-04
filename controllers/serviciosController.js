@@ -2,7 +2,7 @@ const { getTodos, getPorId } = require('../utils/database');
 
 function listar(req, res) {
   const servicios = getTodos();
-  res.render('index', { servicios });
+  res.render('servicios', { servicios });
 }
 
 function detalle(req, res) {
