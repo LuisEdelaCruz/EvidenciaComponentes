@@ -2,48 +2,36 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title><%= taller.nombre %> — Talleres Creativos</title>
+  <title> Cadena de ROpa</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
   <nav>
-    <a class="logo" href="/">Talleres Creativos</a>
-    <div><a href="/talleres">Talleres</a></div>
+    <a class="logo" href="/">Cadena de Ropa</a>
+    <div><a href="/talleres">Prendas disponiblkes</a></div>
   </nav>
 
   <main>
     <div class="container">
 
-      <a class="volver" href="/talleres">← Volver</a>
+      <a class="volver" href="/talleres">Volver</a>
 
       <!-- Información del taller -->
-      <h1><%= taller.nombre %></h1>
-      <p class="precio">$<%= taller.precio %> MXN</p>
-      <p>Cupo disponible: <strong><%= taller.cupo %> lugares</strong></p>
-      <a href="/talleres/<%= taller.id %>/inscritos" style="font-size:0.85rem;">Ver lista de inscritos</a>
+      <h1>Pantalon</h1>
+      <p class="precio">$500</p>
 
       <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid #eee;">
 
-      <!-- Formulario de inscripción (envía por POST al mismo ID del taller) -->
-      <h2>Inscripción</h2>
-
-      <!-- Muestra error si el controller lo devuelve (campo vacío, sin cupo, duplicado) -->
-      <% if (error) { %>
-        <div class="alerta-error"><%= error %></div>
-      <% } %>
-
-      <form action="/talleres/<%= taller.id %>/inscribir" method="POST" style="max-width:380px;">
+      
+      <h2>Te interesa?</h2>
+      <p>Pon tu correo y te mandamos info.</p>
+      <div style="max-width:380px;">
         <div class="form-group">
-          <label for="nombre">Nombre completo</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+          <input type="email" placeholder="correo@ejemplo.com" disabled>
         </div>
-        <div class="form-group">
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
-        </div>
-        <button class="btn" type="submit">Inscribirme</button>
-      </form>
+        <button class="btn" disabled>Quiero información</button>
+      </div>
 
     </div>
   </main>
