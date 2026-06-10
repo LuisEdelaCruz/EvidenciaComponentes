@@ -1,10 +1,11 @@
-// Datos en memoria: simula una base de datos 
+//Generacion de simulacion de datos creados en el primer intento de la competencia ajustado a segundo intento Carlos Gomez
 const talleres = [
-  { id: 1, nombre: 'Cerámica',  precio: 500,  cupo: 12 },
-  { id: 2, nombre: 'Pintura',   precio: 350,  cupo: 15 },
-  { id: 3, nombre: 'Escultura', precio: 650,  cupo: 1  },
-  { id: 4, nombre: 'Textiles',  precio: 500,  cupo: 12 },
-  { id: 5, nombre: 'Joyería',   precio: 1500, cupo: 9  },
+  { id: 1, nombre: 'Pantalon',  talla: 500,  prendas: 12 },
+  { id: 2, nombre: 'Playera',   talla: 350, prendas : 15 },
+  { id: 3, nombre: 'Chamarra', talla: 650,  prendas: 8  },
+  { id: 4, nombre: 'calcetines',  talla: 500,  prendas: 12 },
+  { id: 5, nombre: 'Ropa interior hombre',   talla: 1500, prendas: 9  },
+  { id: 6, nombre: 'Chaleco',   talla: 1500, prendas: 9  },
 ];
 
 const inscripciones = [];
@@ -41,6 +42,16 @@ function inscribir(datos) {
 // Devuelve todas las inscripciones de un taller
 function getInscripcionesPorTaller(tallerId) {
   return inscripciones.filter(i => i.tallerId === parseInt(tallerId));
+}
+
+function cancelarRegistro(registroId) {
+  const idx = registros.findIndex(r => r.id === parseInt(registroId));
+  if (idx === -1) return false;
+  const itemId = registros[idx].itemId;
+  const item = getItemPorId(itemId);
+  item.cupo += 1;
+  registros.splice(idx, 1);
+  return true;
 }
 
 module.exports = { getTalleres, getTallerPorId, yaInscrito, inscribir, getInscripcionesPorTaller };
