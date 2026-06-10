@@ -14,7 +14,7 @@ body {
 
 /* Barra de navegación superior */
 nav {
-  background-color: #112e4f;
+  background-color: #127847;
   padding: 0 2rem;
   height: 52px;
   display: flex;
@@ -53,19 +53,19 @@ main {
 }
 
 /* Títulos */
-h1 { font-size: 1.7rem; color: #112e4f; margin-bottom: 0.4rem; }
-h2 { font-size: 1.1rem; color: #112e4f; margin-bottom: 0.75rem; }
+h1 { font-size: 1.7rem; color: #18bc34; margin-bottom: 0.4rem; }
+h2 { font-size: 1.1rem; color: #09bc48; margin-bottom: 0.75rem; }
 
 p  { line-height: 1.6; color: #555; margin-bottom: 0.75rem; }
 
-a  { color: #0070f3; text-decoration: none; }
+a  { color: #21db49b1; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* Botón principal */
 .btn {
   display: inline-block;
   padding: 0.55rem 1.25rem;
-  background-color: #0070f3;
+  background-color: #03c24f;
   color: white;
   border: none;
   border-radius: 6px;
@@ -74,7 +74,7 @@ a:hover { text-decoration: underline; }
   text-decoration: none;
 }
 
-.btn:hover { background-color: #005bb5; color: white; text-decoration: none; }
+.btn:hover { background-color: #60d67a; color: white; text-decoration: none; }
 
 /* Tarjetas de talleres */
 .tarjetas {
@@ -92,8 +92,8 @@ a:hover { text-decoration: underline; }
   text-align: center;
 }
 
-.tarjeta h3  { color: #112e4f; margin-bottom: 0.4rem; }
-.precio      { font-weight: bold; color: #0070f3; margin-bottom: 0.3rem; }
+.tarjeta h3  { color: #25a82c; margin-bottom: 0.4rem; }
+.precio      { font-weight: bold; color: #0aab60; margin-bottom: 0.3rem; }
 .cupo        { font-size: 0.8rem; color: #888; margin-bottom: 0.75rem; }
 .cupo.agotado { color: #c0392b; font-weight: bold; }
 
@@ -111,8 +111,8 @@ input {
 
 input:focus {
   outline: none;
-  border-color: #0070f3;
-  box-shadow: 0 0 0 3px rgba(0,112,243,0.1);
+  border-color: #2b9870;
+  box-shadow: 0 0 0 3px rgba(41, 190, 118, 0.1);
 }
 
 /* Mensaje de error en formulario */
@@ -129,7 +129,7 @@ input:focus {
 /* Tabla de inscritos */
 table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
 th, td { text-align: left; padding: 0.7rem 1rem; border-bottom: 1px solid #eee; }
-th { background: #f0f6ff; color: #112e4f; }
+th { background: #f0f6ff; color: #28c878; }
 
 /* Link de regreso */
 .volver { display: inline-block; margin-bottom: 1.25rem; font-size: 0.9rem; }
