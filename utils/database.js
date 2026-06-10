@@ -44,3 +44,8 @@ function getInscripcionesPorTaller(tallerId) {
 }
 
 module.exports = { getTalleres, getTallerPorId, yaInscrito, inscribir, getInscripcionesPorTaller };
+
+
+function getPrueba(){
+  return 0
+}
