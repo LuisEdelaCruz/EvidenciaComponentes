@@ -1,8 +1,8 @@
-// Datos en memoria: simula una base de datos mientras no haya BD real
+// Datos en memoria: simula una base de datos 
 const talleres = [
   { id: 1, nombre: 'Cerámica',  precio: 500,  cupo: 12 },
   { id: 2, nombre: 'Pintura',   precio: 350,  cupo: 15 },
-  { id: 3, nombre: 'Escultura', precio: 650,  cupo: 8  },
+  { id: 3, nombre: 'Escultura', precio: 650,  cupo: 1  },
   { id: 4, nombre: 'Textiles',  precio: 500,  cupo: 12 },
   { id: 5, nombre: 'Joyería',   precio: 1500, cupo: 9  },
 ];
